@@ -1,12 +1,13 @@
-name: React CI/CD
+name: React CI
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
+  # Задача для установки зависимостей
   install:
     runs-on: ubuntu-latest
     steps:
@@ -15,41 +16,24 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
-        
+  # Задача для тестирования
   test:
-    runs-on: [ubuntu-lates, macos-latest, windows-latest]
-    needs: install
+    runs-on: ubuntu-latest
+    needs: install  # Выполняется после установки зависимостей
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '16'
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps --no-audit --force --verbose #Устанавливает зависимости из lock-файла
 
       - name: Run tests
         run: npm test
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps --no-audit --force --verbose 
-
-      - name: Run build
-        run: npm run build
-        
