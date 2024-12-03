@@ -100,9 +100,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-        
-      - name: add origin
-        run: git remote add origin https://${{ secrets.TOKEN }}@github.com/ggermashev/sf-cicd.git
-
       - name: Run deploy
         run: npm run deploy
+
