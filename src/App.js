@@ -9,14 +9,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
+        <p
         >
           CI/CD Works!
-        </a>
+        </p>
       </header>
     </div>
   );
