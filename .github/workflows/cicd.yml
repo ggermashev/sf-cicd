@@ -102,5 +102,5 @@ jobs:
 
       - name: Run deploy
         run: npm run deploy
-          with:
-            github_token: ${{ secrets.TOKEN }}
+        with:
+          token: ${{ secrets.TOKEN }}
