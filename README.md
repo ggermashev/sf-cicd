@@ -142,5 +142,5 @@ jobs:
 Запускается после install
 
 #### deploy
-Публикация проекта на gh-pages
+Публикация проекта на [gh-pages](https://ggermashev.github.io/sf-cicd/)
 Запускается после test{1,2,3}, build
