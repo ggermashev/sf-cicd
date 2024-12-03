@@ -1,5 +1,6 @@
 {
   "name": "sf-cicd",
+  "homepage": "https://ggermashev.github.io/sf-cicd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
