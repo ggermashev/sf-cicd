@@ -103,6 +103,12 @@ jobs:
       - name: rm origin
         run: git remote remove origin
 
+      - name: set email
+        run: git config --global user.email "action@action.com"
+
+      - name: set username
+        run: git config --global user.name "action"
+
       - name: add origin
         run: git remote add origin https://${{ secrets.TOKEN }}@github.com/ggermashev/sf-cicd.git
 
